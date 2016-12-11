@@ -1,4 +1,4 @@
-# simpleJS
+# SimpleJS
 SimpleJS js an extremely lightweight Single Page Application (SPA) framework.
 
 Ceating an SPA with modern SPA frameworks such as Aurelia, Anglar or React can be a daunting task.
