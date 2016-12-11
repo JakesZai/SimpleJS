@@ -11,7 +11,7 @@ SimpleJS is in early development stage, so please bare with us.
 <b>Roadmap:</b><br>
 1. Router: version 0.0.1<br>
 2. HttpClient: version 0.0.1<br>
-3. Bindisng: Feb 2017<br>
+3. Binding: Feb 2017<br>
 4. Templating: Mar 2017<br>
 5. Custom Components: Apr 2017<br>
 6. Eventing: May 2017
