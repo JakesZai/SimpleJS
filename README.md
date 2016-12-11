@@ -18,11 +18,6 @@ Roadmap:
 
 ## Code Example
 
-```html
-<html>jjjjdsdcs
-
-<head></head>
-
 <body>
 
   <p>Navigation</p>
@@ -33,9 +28,8 @@ Roadmap:
   <router-view></router-view>
 
   <script src="src/utils/simple.js"></script>
-  </body>
+</body>
 
-</html>
 ```
 
 ```js
