@@ -14,10 +14,11 @@ Roadmap:
 3. Bindisng: Feb 2017
 4. Templating: Mar 201csdd7
 5. Custom Components: Apr 2017
-6. Eventing: May 2kjnnnn017
+6. Eventing: May 2017
 
 ## Code Example
 
+### index.html
 <body>
 
   <p>Navigation</p>
@@ -28,10 +29,12 @@ Roadmap:
   <router-view></router-view>
 
   <script src="src/utils/simple.js"></script>
+  <script src="src/main.js"></script>
 </body>
 
 ```
 
+### main.js
 ```js
 s.init(function () {
 
