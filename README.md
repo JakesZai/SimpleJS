@@ -8,7 +8,7 @@ Simply include simpleJS in your application and you're all set!
 
 SimpleJS is in early development stage, so please bare with us.
 
-Roadmap:
+Roadmap:<br>
 1. Router: version 0.0.1<br>
 2. HttpClient: version 0.0.1<br>
 3. Bindisng: Feb 2017<br>
