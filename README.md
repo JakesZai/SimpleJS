@@ -19,6 +19,7 @@ Roadmap:
 ## Code Example
 
 ### index.html
+```html
 <body>
 
   <p>Navigation</p>
