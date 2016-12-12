@@ -23,8 +23,8 @@ SimpleJS is in early development stage, so please bare with us.
 <body>
 
   <p>Navigation</p>
-  <button onclick="s.router.navigate('parent')">Parent</button>
-  <button onclick="s.router.navigate('child')">Child</button>
+  <button onclick="sim.router.navigate('parent')">Parent</button>
+  <button onclick="sim.router.navigate('child')">Child</button>
   <hr/>
 
   <router-view></router-view>
