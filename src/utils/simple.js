@@ -2,75 +2,77 @@ var SimpleJs = function () {
 
   // Private
   var self = this;
+  self.modulesLoaded = 0;
 
-  function loadModule(url, module, callback) {
+  function loadModule(module, callback) {
 
     var script = document.createElement('script')
 
     script.onreadystatechange = function () {
-      if (script.readyState == 'loaded' ||
-        script.readyState == 'complete' ){
-        callback(module);
+      if (script.readyState == 'loaded' || script.readyState == 'complete'){
+        callback(module[1]);
       }
     };
 
     script.onload = function () {
-      callback(module)
+      callback(module[1])
     };
 
-    script.src = url;
+    script.src = module[0];
     document.body.appendChild(script);
+  }
+
+  self.load = function(module){
+
+    var moduleInstance;
+
+    var loadedCallback = function() {
+      self[module[1]] = new window[module]()
+    };
+
+    var setDirectory = function(directory){
+      loadModule([directory, module], loadedCallback);
+    }
+
+    return {
+      from: setDirectory
+    }
   }
 
   function loaded(module) {
 
-    self[module + 'Ready'] = true;
+    self.modulesLoaded++;
 
-    if (self.getParamReady && self.routerReady && self.httpRequestReady) {
-
-      self.getParam = new GetParam();
-      self.router = new Router();
-      self.http = new HttpRequest();
-
+    if(self.modules.length === self.modulesLoaded) {
       self.readyCallback();
-
     }
 
   }
 
   // Public
-  var init = function(callback){
+  self.init = function(callback){
 
-    self.readyCallback = callback;
+    self.modules = [['./src/utils/router.js', 'router'], ['./src/utils/httpRequest.js', 'httpRequest']];
 
-    loadModule('./src/utils/getParam.js', 'getParam', loaded);
-    loadModule('./src/utils/router.js', 'router', loaded);
-    loadModule('./src/utils/httpRequest.js', 'httpRequest', loaded);
-  };
+    self.readyCallback = function() {
 
-  var router = function() {
+      for(var module of self.modules) {
+        self[module[1]] = new window[module[1]]();
+      }
+    }
 
-    return self.router;
-  };
+    for(var module of self.modules) {
+      loadModule(module, loaded)
+    }
 
-  var http = function() {
-
-    return self.http;
-  };
-
-  var getParam = function() {
-
-    return self.getParam;
-  };
+  }();
 
   return {
-    init: init,
-    get getParam() {  return getParam() },
-    get router() { return router() },
-    get http() {  return http() }
+    get self() { return self }
   }
 
 };
 /*
 */
-var s = new SimpleJs();
+window.sim = new SimpleJs().self;
+window.load = window.sim.load;

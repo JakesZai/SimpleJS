@@ -2,7 +2,7 @@ function Child() {
 
   var back = function () {
 
-    s.router.navigate('parent');
+    sim.router.navigate('parent');
   };
 
   return {

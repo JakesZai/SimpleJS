@@ -1,4 +1,4 @@
-function HttpRequest() {
+function httpRequest() {
 
   // GET
   var get = function (uri, callback) {

@@ -1,12 +1,14 @@
-s.init(function () {
+window.onload = function() {
+
+  load('getParam').from('./src/utils/getParam.js');
 
   var routerConfig = [
     {route: 'parent', moduleId: '/src/views/parent',  title: 'Parent'},
     {route: 'child',  moduleId: '/src/views/child',   title: 'Child'}
   ];
 
-  s.router.configure(routerConfig);
+  sim.router.configure(routerConfig);
 
-  s.router.navigate('parent');
+  sim.router.navigate('parent');
 
-});
+};

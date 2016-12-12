@@ -1,4 +1,4 @@
-function Router() {
+function router() {
 
   var config;
 
@@ -48,7 +48,7 @@ function Router() {
     var moduleSource = moduleId + '.js';
     var moduleTitle = routeConfig.title;
 
-    s.http.get(moduleView, function (view) {
+    sim.httpRequest.get(moduleView, function (view) {
 
       // Load View
       routerView.innerHTML = view;

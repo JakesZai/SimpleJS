@@ -1,4 +1,4 @@
-function GetParam() {
+function getParam() {
 
   var byName = function (name, url) {
 
